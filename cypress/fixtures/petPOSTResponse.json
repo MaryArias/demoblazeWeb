@@ -1,0 +1,9 @@
+{
+    "name": "doggie",
+    "photoUrls": ["test.com/image"],
+    "tags": [{
+        "id": 0,
+        "name": "fluffy"
+    }],
+    "status": "available"
+}
