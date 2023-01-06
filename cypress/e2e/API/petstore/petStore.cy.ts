@@ -1,8 +1,8 @@
-import { Then, When } from "@badeball/cypress-cucumber-preprocessor";
+import { Then, When } from "cypress10-cucumber-preprocessor/steps";
 import { pet } from "../../../interfaces/pet";
 
 When(
-  'the user sends a "post transactions" request using {string}',
+  'the user sends a post transaction request using {string}',
   (body: string) => {
     cy.fixture(body).then((a) => {
       cy.request("POST", "https://petstore.swagger.io/v2/pet", a).as(
@@ -30,7 +30,7 @@ Then(
 );
 
 When(
-  'the user sends a "get transactions" request using {string}',
+  'the user sends a get transaction request using {string}',
   (petId: string) => {
     cy.request("GET", `https://petstore.swagger.io/v2/pet/${petId}`).as("pet");
   }
@@ -54,7 +54,7 @@ Then(
 );
 
 When(
-    'the user sends a "put transactions" request using {string}',
+    'the user sends a put transaction request using {string}',
     (body: string) => {
       cy.fixture(body).then((a) => {
         cy.request("PUT", "https://petstore.swagger.io/v2/pet", a).as(

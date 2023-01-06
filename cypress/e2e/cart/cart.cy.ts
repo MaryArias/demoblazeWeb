@@ -1,4 +1,4 @@
-import { When, Then, Given } from "@badeball/cypress-cucumber-preprocessor";
+import { When, Then, Given } from "cypress10-cucumber-preprocessor/steps";
 import homePage from "../../POMs/homePage";
 
 Given("I open the application", () => {
@@ -12,15 +12,15 @@ When("Click in Laptops button", () => {
 When("Click in the first laptop", () => {
   homePage.firstCardLink.click().invoke("text").as("laptopName");
 });
-When('Click in "add to cart" button', () => {
+When('Click in add to cart button', () => {
   homePage.addToCard.click();
 });
-Then('I see alert "Product added"', () => {
+Then('I see alert Product added', () => {
   cy.on("window:alert", (text) => {
     expect(text).to.contains("Product added");
   });
 });
-Then('click in "cart" button', () => {
+Then('click in cart button', () => {
   homePage.cartButton.click();
 });
 Then("Check laptop is in cart", () => {

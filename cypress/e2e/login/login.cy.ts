@@ -1,4 +1,4 @@
-import { Given, Then, When } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, Then, When } from "cypress10-cucumber-preprocessor/steps";
 import { faker } from "@faker-js/faker";
 import homePage from "../../POMs/homePage";
 
@@ -20,7 +20,7 @@ Then('I see alert "Sign up successful"', () => {
     expect(text).to.contains("Sign up successful.");
   });
 });
-When('Click in "logIn"', () => {
+When('Click in logIn', () => {
   homePage.logIn.click();
 });
 When(
